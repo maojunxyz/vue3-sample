@@ -1,6 +1,11 @@
 <template>
   <div v-if="seen" :title="msg" v-on:click="handleClick">
     {{ msg }}
+    <template v-for="todo in todos" :key="todo">
+      <div>
+        {{ todo }}
+      </div>
+    </template>
   </div>
 </template>
 
@@ -11,7 +16,8 @@ export default {
   data() {
     return {
       msg: "Hello world！",
-      seen: true
+      seen: true,
+      todos: ["Vue", "React", "Angular"]
     }
   },
   methods: {
