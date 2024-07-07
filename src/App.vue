@@ -1,5 +1,5 @@
 <template>
-  <div>{{ msg }}</div>
+  <div v-bind:title="msg">{{ msg }}</div>
 </template>
 
 <script>
