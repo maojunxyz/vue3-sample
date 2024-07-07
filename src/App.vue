@@ -1,23 +1,25 @@
 <template>
-  <div :title="msg" v-on:click="handleClick">{{ msg }}</div>
+  <div v-if="seen" :title="msg" v-on:click="handleClick">
+    {{ msg }}
+  </div>
 </template>
 
 <script>
 
 export default {
   name: 'App',
-  data(){
+  data() {
     return {
-      msg: "Hello world！"
+      msg: "Hello world！",
+      seen: true
     }
   },
-  methods:{
-    handleClick(event){
-      alert(event.target.title);
+  methods: {
+    handleClick() {
+      this.seen = false;
     }
   }
 }
 </script>
 
-<style>
-</style>
+<style></style>
