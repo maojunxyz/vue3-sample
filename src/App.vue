@@ -1,5 +1,5 @@
 <template>
-  <div v-bind:title="msg">{{ msg }}</div>
+  <div :title="msg" v-on:click="handleClick">{{ msg }}</div>
 </template>
 
 <script>
@@ -9,6 +9,11 @@ export default {
   data(){
     return {
       msg: "Hello world！"
+    }
+  },
+  methods:{
+    handleClick(event){
+      alert(event.target.title);
     }
   }
 }
